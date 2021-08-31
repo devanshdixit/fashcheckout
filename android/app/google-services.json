@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "403925068833",
+    "project_id": "fastcheckout-a5d98",
+    "storage_bucket": "fastcheckout-a5d98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403925068833:android:cbbe6e82635c07e0694760",
+        "android_client_info": {
+          "package_name": "com.virtualphoenix.fastcheckout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403925068833-cvi7p126idv6ao48lgtei87nkd46ta9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.virtualphoenix.fastcheckout",
+            "certificate_hash": "9520063bc5bbfb3bb93fbab311f32f0999be8652"
+          }
+        },
+        {
+          "client_id": "403925068833-4nf4pc48lfm44tl7p93q0qno8vlrt71p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVcdLpa0IIW-vCko_hglyXcgPrXDMy6d8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403925068833-4nf4pc48lfm44tl7p93q0qno8vlrt71p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
