@@ -143,7 +143,19 @@ class _OrderDetailsState extends State<OrderDetails> {
                   },
                 ),
           verticalSpaceSmall,
-          ElevatedButton(
+          Visibility(
+            child: bytes1.isNotEmpty ? buildImage(bytes1) : SizedBox(),
+            visible: false,
+          ),
+        ],
+      ),
+      bottomSheet: Container(
+        color: Colors.white,
+        padding: EdgeInsets.all(16),
+        child: Container(
+          width: double.infinity,
+          child: ElevatedButton(
+            child: Text('Capture'),
             onPressed: () async {
               final bytes1 = await Utils.capture(key2);
 
@@ -151,11 +163,9 @@ class _OrderDetailsState extends State<OrderDetails> {
                 this.bytes1 = bytes1;
                 this.bytes2 = bytes2;
               });
-              buildImage(bytes1);
             },
-            child: Text('share'),
           ),
-        ],
+        ),
       ),
     );
   }
@@ -166,12 +176,15 @@ class _OrderDetailsState extends State<OrderDetails> {
   }
 
   Future<Null> urlFileShare(Uint8List bytes) async {
+    final data = File.fromRawPath(bytes);
+    // final data1 = await File('generated.jpg').writeAsBytes(bytes);
     final dir = await getExternalStorageDirectory();
-    final myImagePath = dir!.path + "/order.png";
+    final myImagePath = dir!.path + "/myimg.png";
     File imageFile = File(myImagePath);
     if (!await imageFile.exists()) {
       imageFile.create(recursive: true);
     }
+    final data1 = imageFile.writeAsBytes(bytes);
     await FlutterShare.shareFile(
       title: 'Example share',
       text: 'Example share text',
